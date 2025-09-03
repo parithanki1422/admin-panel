@@ -216,31 +216,45 @@ export default function ProjectsPage() {
                 </TableCell>
               )}
               {(columns.projectName || columns.projectNumber) && (
-                <TableCell colSpan={2} align="center" sx={{ fontWeight: 700 }}>
+                <TableCell
+                  colSpan={
+                    [columns.projectName, columns.projectNumber].filter(Boolean)
+                      .length
+                  }
+                  align="center"
+                  sx={{ fontWeight: 700 }}
+                >
                   PROJECT REFERENCE
                 </TableCell>
               )}
               {(columns.projectLocation || columns.address) && (
-                <TableCell colSpan={2} align="center" sx={{ fontWeight: 700 }}>
+                <TableCell
+                  colSpan={
+                    [columns.projectLocation, columns.address].filter(Boolean)
+                      .length
+                  }
+                  align="center"
+                  sx={{ fontWeight: 700 }}
+                >
                   PROJECT LOCATION
                 </TableCell>
               )}
               {columns.dueDate && (
-                <TableCell align="center" sx={{ fontWeight: 700 }}>
+                <TableCell rowSpan={2} align="center" sx={{ fontWeight: 700 }}>
                   DUE DATE
                 </TableCell>
               )}
               {columns.contact && (
-                <TableCell align="center" sx={{ fontWeight: 700 }}>
+                <TableCell rowSpan={2} align="center" sx={{ fontWeight: 700 }}>
                   CONTACT
                 </TableCell>
               )}
               {columns.status && (
-                <TableCell align="center" sx={{ fontWeight: 700 }}>
+                <TableCell rowSpan={2} align="center" sx={{ fontWeight: 700 }}>
                   STATUS
                 </TableCell>
               )}
-              <TableCell align="center" sx={{ fontWeight: 700 }}>
+              <TableCell rowSpan={2} align="center" sx={{ fontWeight: 700 }}>
                 ACTIONS
               </TableCell>
             </TableRow>
